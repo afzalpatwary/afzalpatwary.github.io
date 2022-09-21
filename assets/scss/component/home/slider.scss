@@ -1,0 +1,205 @@
+.slider{
+    position: relative;
+    padding:7.5rem 0;
+    overflow: hidden;
+    background: linear-gradient(to right, #002db3, #0033CC);
+    z-index:1;
+
+    &::before{
+        border-right: 50vw solid #fff;
+        border-top: 6.25rem solid transparent;
+        bottom: 0;
+        content: "";
+        height: 0;
+        position: absolute;
+        right: 0;
+        width: 0;
+        z-index: 1;
+    }
+
+    &::after{
+        border-left: 50vw solid #fff;
+        border-top: 6.25rem solid transparent;
+        bottom: 0;
+        content: "";
+        height: 0;
+        left: 0;
+        position: absolute;
+        width: 0;
+        z-index: 1;
+    }
+
+    .shap{
+        position: absolute;
+        background-image: linear-gradient(35deg,#fff,#edf4f8);
+        width: 45%;
+        height: 85%;
+        -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        z-index: 1;
+        opacity:0.1;
+    }
+
+    .shap-01{
+        position:absolute;
+        top:10rem;
+        left:50%;
+        opacity:0.1;
+        -webkit-animation-name: rotateMe;
+        animation-name: rotateMe;
+        -webkit-animation-duration: 10s;
+        animation-duration: 10s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+
+    .shap-02{
+        position: absolute;
+        left: 6%;
+        transform: rotate(54deg);
+        z-index: 1;
+        opacity: 0.1;
+    }
+
+    .shape-03{
+        position: absolute;
+        z-index: 0;
+        left: 60%;
+        top: -5%;
+        width: 31.25rem;
+        height: 100%;
+        transform: translate3d(-23%, 17%, 0) rotate(-54deg);
+        background-image: linear-gradient(35deg, #fff, #edf4f8);
+        opacity: 0.1;
+
+        &::before{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 2.5rem;
+            background: $color-use;
+            left: 0px;
+            top: -246px;
+            z-index: -1;
+            border-radius: 1.25rem;
+            transform: rotate(79deg);
+        }
+
+        &::after{
+            position: absolute;
+            content: "";
+            width: 31.25rem;
+            height: 31.25rem;
+            background: #ffff;
+            border-radius: 50%;
+            right: -36.125rem;
+            top:9.5625rem
+        }
+    }
+
+    .main-wrapper{
+        display:flex;
+        -webkit-display:flex;
+        -webkit-flex:1 1 100%;
+        flex:1 1 100%;
+        flex-wrap:wrap;
+        max-width:100%;
+        width:100%;
+        margin:1.25rem 0;
+        position: relative;
+        z-index:2;
+
+        @media screen and(max-width:767.98px){
+        
+        }
+
+        .sub-wrapper-01{
+            flex:1 1 50%;
+            max-width:50%;
+            width:50%;
+
+             @media screen and(max-width:767.98px){
+                flex:1 1 100%;
+                max-width:100%;
+                width:100%;
+            }
+
+            .image{
+                padding:0.375rem 0.9375rem;
+                display:inline-block;
+                position: relative;
+                z-index:9;
+            }
+
+            .content{
+                padding:0.625rem 0.9375rem;
+                color:$color-use;
+                display:inline-block;
+                position: relative;
+                z-index:9;
+
+                h1{
+                    display: block;
+                    font-size:2.5rem;
+                    font-weight:800;
+                    line-height:3.75rem;
+                    letter-spacing:0.0625rem;
+                    text-transform:uppercase;
+                    margin:0 0 1.25rem;
+                    position: relative;
+
+                    &::before{
+                        position: absolute;
+                        content:"";
+                        background-image: radial-gradient(#fafafa 3px,transparent 0);
+                        background-size:0.9375rem 0.9375rem;
+                        height:9.375rem;
+                        width:9.375rem;
+                        opacity:0.2;
+                        right:7.5rem 
+                    }
+                }
+
+                p{
+                    font-size:1.125rem;
+                    line-height:1.875rem;
+                    font-weight:400;
+                    margin:0 0 1.125rem;
+                    display:inline-block;
+                }
+
+                .btn-01{
+                    display:block;
+                    margin:1.125rem 0;
+                    position: relative;
+
+                    ul{
+                        li{
+                            &:nth-of-type(1){
+                                margin-left:0;
+                            }
+                            display:inline-block;
+                            margin: 0 0.625rem;
+                            padding:0.3125rem 1.25rem;
+                            border-radius:1.25rem;
+                            background:transparent;
+                            border:solid 0.0625rem $color-use;
+                            position:relative;
+                            z-index:9;
+
+                            a{
+                                color:$color-use;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes rotateMe{0%{transform:rotate(0deg)}
+to{transform:rotate(1turn)}};
